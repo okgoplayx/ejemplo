@@ -1,0 +1,106 @@
+<?php
+session_start();
+
+function proteccion ($v)
+{
+	$v = mysql_real_escape_string($v);
+	$v = htmlentities($v , ENT_QUOTES);
+	$v = trim($v); 
+	return $v;
+}
+
+$usuario = proteccion($_POST["usuario"]);
+$contrasena = proteccion($_POST["contrasena"]);
+
+
+$conexion=mysqli_connect("localhost","root","punknotdead");
+mysqli_select_db($conexion, "perfiles");
+$mysql_consultar_si_existe_usuario="select nombre_de_usuario from usuarios
+where
+nombre_de_usuario='".$usuario."'";
+$res=mysqli_query($conexion, $mysql_consultar_si_existe_usuario);
+if (mysqli_num_rows($res) == 0)
+{
+	echo "<script type='text/javascript'>
+		alert('El usuario ".$usuario." no existe en la base de datos');
+	/*	window.location='index.php'; */
+	</script>";
+}else
+{
+//******************************************************************************
+//Ahora preguntamos el el login y el password coinciden en la base de datos
+$consulta="select * from  usuarios
+where
+nombre_de_usuario='".$usuario."'
+and
+contra='".$contrasena."'";
+$result=mysqli_query($conexion,$consulta);
+if (mysqli_num_rows($result) == 0)
+{
+	echo "<script type='text/javascript'>
+		alert('El usuario y el pass ingresados no conciden');
+	/*	window.location='index.php'; */
+	</script>";
+}else
+{
+//******************************************************************************
+//Ahora le damos acceso a nuestros contenidos restringidos
+	$_SESSION["usuario"]=$_POST["usuario"];
+//	header("Location: index.php");
+//******************************************************************************
+}
+//******************************************************************************
+}
+
+
+//*******************************************************************************
+
+if ($_SESSION["usuario"])
+{
+?>
+
+
+hola <?php echo $_SESSION["usuario"];?>
+<br />
+<a href="prueba.php">ir</a>
+<br />
+<a href="salir.php">Salir</a>
+
+<?php
+}else
+{
+	echo "<script type='text/javascript'>
+		alert('Usted no está logueado');
+	/*	window.location='index.php'; */
+	
+	</script>";
+	echo "hascas";
+	echo $_SESSION["usuario"];
+}
+
+
+
+
+
+
+
+
+$consulta= mysqli_query($conexion,'SELECT * FROM usuarios WHERE nombre_de_usuario="'.$usuario.'" AND contra="'.$contrasena.'"');
+$array_consulta= mysqli_fetch_array($consulta);
+
+if ($array_consulta==false)
+ {
+   echo "usuario no encontrado en nuestra base de datos";
+    }
+   else {
+	echo "hola";
+	//   $_SESSION["usuario"]= $array_consulta["usuario"];
+
+	}
+	echo $_SESSION["usuario"];
+   echo $usuario;
+   echo $contrasena;
+   echo $consulta;
+
+?>
+?>

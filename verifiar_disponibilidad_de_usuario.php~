@@ -1,0 +1,22 @@
+<?php
+session_name("session");
+session_start();
+$conexion=mysqli_connect("localhost","root","punknotdead");
+    function proteccion ($v,$c)
+             {  
+              $v = mysqli_real_escape_string($c, $v);
+              $v = htmlentities($v , ENT_QUOTES);
+              $v = trim($v);
+              return $v;
+             };
+$nombre_de_usuario = proteccion($_POST["nombre_de_usuario"], $conexion);
+
+$SQL_verificar_usuario= "SELECT nombre_de_usuario from usuarios WHERE (nombre_de_usuario='".$nombre_de_usuario."')";
+
+if ($res=mysqli_query($conexion, $SQL_verificar_usuario))
+   {if (mysqli_num_rows($res)===0){
+        echo "usuario disponible"; 
+       } else { echo "usuario ya existente";}
+   } else { $error=mysqli_connect_errno(); echo $error;}
+             
+?>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset='utf-8'>
+		<title>Diss</title>
+		<link rel="stylesheet" type="text/css" href="Css.css" title="hoja1" />
+	</head>
+	<body>
+	<!---------------------------------------->
+	<!-- Barra superior de menu -->
+		<div id="menu"> 
+			<div id="barra_menu">
+	<!---------------------------------------->
+	<!---------------------------------------->
+	<!-- Notificaciones -->
+				<ul id="notificaciones" class="barra">
+					<li id="permisos" class="barra" title="permisos">
+					</li></li>
+					<li id="mensajes" class="barra" title="mensajes">
+					</li>
+					<li id="novedades" class="barra" title="novedades">
+					</li>
+              </ul>
+              <!--------------------------------------------------->
+              <!-- Buscar -->
+              <div id="buscar">
+                <input placeholder="Buscar"/>
+              </div>
+           <!-- Reproductor -->
+              <div id="reproductor" class="barra">
+                  <div id="play" title="play/pausa" class="barra" >
+                       
+                  </div>
+                  <div class="barra" id="tema">
+                   <label id="nombreDelTema"> <span>Nombre del tema</span></label>
+                  </div>
+                  <div class="barra" id="confa">
+                     
+                  </div>
+              </div>
+              <!--------------------------------------------------->
+              <!-- Perfil -->
+              <a href="http://localhost/mipagina" >Diss</a>
+              <div id="perfil">
+                 <img src="" id="opcionesDePerfil" class="orden_de_der_a_izq" title="opciones de perfil">
+                 <label id="nombreDePerfil" class="orden_de_der_a_izq" title="Nombre de perfil">Nombre</label>
+                 <img id="fotoperfil" class="orden_de_der_a_izq" src="i1.jpg" title="Foto de perfil" >
+              </div>
+              <!--------------------------------------------------->
+              <!-- formulario de ingreso -->
+              <div id="ingreso">
+                <button class="orden_de_der_a_izq" id="sisu"> registrese </button>
+                <form id="formulario_de_ingreso" method="post" action="iniciar_sesion.php" name="formlario" class="orden_de_der_a_izq"> 
+                   <ul>
+                       <li class="orden_de_der_a_izq">
+                          <label > o </label>
+                       </li>
+                       <li class="orden_de_der_a_izq">
+                          <button id="ingresar" type="button">ingrese</button>
+                       </li>
+                       <li class="orden_de_der_a_izq">
+                           <input id="" class="input" type="checkbox" name="perfil_privado" />
+                       </li>
+                       <li class="orden_de_der_a_izq">
+                          <input id="contrasena" class="ingresar" type="password"  placeholder="Contraseña" name="contrasena"/>
+                       </li>
+                       <li  class="orden_de_der_a_izq">
+                          <input id="usuario" class="ingresar"  placeholder="Usuario" name="usuario"/>
+                       </li>
+                   </ul>
+                </form>
+              </div>
+           </div>
+       </div>
+       <div id="contenedor" >
+       
+       <div id="cajaDeRegistro">
+              <form  id="formulario_de_registro" name="forml" method="post" action="registro.php">
+                    <div class="campo_del_registro">
+                          <label>Nombre</label><br/>
+                          <input id="nombre" type="text" name="nombre" value="" required="required">
+                          <br/><label id="indicacion_nombre"></label>
+                    </div>
+                    <div class="campo_del_registro">
+                          <label>Apellido</label></br>
+                          <input id="apellido" type="text" name="apellido" value="" required="required">
+                          <br/><label id="indicacion_apellido"></label>
+                    </div>
+                    <div class="campo_del_registro">
+                          <label>Nombre de usuario</label> <br/>
+                          <input id="nombre_de_usuario" type="text" name="nombre_de_usuario" value="" required="required">  
+                          <br/><label id="indicacion_nombre_usuario"></label>
+                    </div>
+                    <div class="campo_del_registro">
+                          <label>Correo</label> <br/>
+                          <input id="email" type="email" name="correo" value="" required="required">
+                          <br/><label id="indicacion_correo"></label>
+                    </div>
+                    <div class="campo_del_registro">
+                          <label>Contraseña </label><br/>
+                          <input id="contra" type="password" name="contra" value="" required="required" />
+                          <br/><label id="indicacion_contra"></label>
+                    </div>
+                    <div class="campo_del_registro">
+                          <label> Repita contraseña</label><br/>
+                          <input id="repcontra" type="password" name="repcontra" value="" required="required"/>
+                          <br/><label id="indicacion_repcontra"></label>
+                    </div>
+                    <div id="campo fecha">
+                          <label>Fecha de nacimiento</label><br/>
+                          <input id="regi_dia" type="number" name="dia" min="1" max="31" required="required" />
+                          <input id="regi_mes" type="number" name="mes" min="1" max="12" required="required" />
+                          <input id="regi_ano" type="number" name="ano" min="1870" max="2014" required="required" />
+                          <br/><label id="indicacion_edad"></label>
+                    </div>
+                    <button id="aceptar_registro" type="button">Aceptar</button>
+              </form>
+       </div>
+       </div>
+       <!---------------------------------------->
+       <!-- Caja de control de video -->
+       <div id="controlAV" class="banno">
+           <div id="botoneraAV1" class="barraDeOpcionesDeContenido">
+                <button id="bPlay" class="boton" title="play"></button>
+                <button id="bPausa" class="boton" title="pausa"></button>
+                <button id="bVolumen" class="boton" title="volumen"></button>
+                <button id="bSiguiente" class="boton" title="siguiente"></button>
+                <button id="bAnterior" class="boton" title="anterior"></button>
+                <button id="bPantallaCompleta" class="boton" title="pantalla completa"></button>
+           </div>
+           <div id="botoneraAV2" class="barraDeOpcionesDeContenido">
+                <button id="bSub" class="boton" title="subtitulos"></button>
+                <button id="bAudioE" class="boton" title="audio"></button>
+                <button id="bVideoE" class="boton" title="video"></button>
+                <button id="" class="boton" title=""></button>
+                <button id="" class="boton" title=""></button>
+                <button id="bVelV" class="boton" title="velocidad"></button>
+           </div>
+           <button id="OtrasConf" class="boton" title="otras configuraciones"></button>
+
+           <div id="cajaControlVol" class="barraMasMenos">
+               <button id="volumenMas" class="botonMasMenos"></button>
+               <div id="barraVol">
+                   <div id="posicionVol">  </div>
+               </div>
+               <button id="volumenMenos" class="botonMasMenos"></button>
+           </div>
+           <div id="cajaControlVel" class="barraMasMenos">
+               <button id="velocidadMas" class="botonMasMenos"></button>
+               <div id="barraVel">
+                   <div id="posicionVel">  </div>
+               </div>
+               <button id="velocidadMenos" class="botonMasMenos"></button>
+           </div>
+           <div id="cajaBarraConte" class="barraDeOpcionesDeContenido">
+               <button id="sigParteCont" class="botonMasMenos"></button>
+               <div id="barraCon">
+                   <div id="posicionCon">  </div>
+               </div>
+               <button id="antParteCont" class="botonMasMenos"></button>
+           </div>
+           <video id="elVideo">
+
+           </video>
+
+       </div>
+       <!---------------------------------------->
+       <!-- Caja de notificaciones de permisos -->
+       <div id="banno_permisos" class="banno">
+           <div class="opnoti">
+               <ul>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+               </ul>
+           </div>
+           <div id="contenidoDeNotificacion_permisos" class="contenidoDeNotificacion">
+           </div>
+       </div>
+
+       <!---------------------------------------->
+       <!-- Caja de notificaciones de mensajes-->
+       <div id="banno_mensajes" class="banno">
+           <div class="opnoti">
+               <ul>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+                </ul>
+            </div>
+            <div id="contenidoDeNotificacion_mensajes" class="contenidoDeNotificacion">
+            </div>
+       </div>
+       <!---------------------------------------->
+       <!-- Caja de notificaciones de novedades  -->
+       <div id="banno_novedades" class="banno">
+           <div class="opnoti">
+               <ul>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+                   <a href="#"><li class="boton"></li></a>
+                </ul>
+           </div>
+           <div id="contenidoDeNotificacion_novedades" class="contenidoDeNotificacion">
+           </div>
+       </div>
+       <!---------------------------------------->
+       <!-- zona donde se va a mostrar el contenido -->
+       <div id="cuerpo">
+           <!---------------------------------------->
+           <!-- Barra de herramientas que esta en parte izquierda -->
+
+           <div id="publicar">
+               <form>
+                    <textarea id="contenido_de_publicacion"  type="text"  placeholder="Escrive aqui lo que quieras publicar" name="texto_de_publicacion"> </textarea>
+                    <label>desea subir algun archivo</label>
+                    <button id="boton_para_subir_imagenes" class="boton_para_subir" title="imagenes"></button>
+                    <button id="boton_para_subir_videos" class="boton_para_subir" title="video"></button> 
+                    <button id="boton_para_subir_archivos" class="boton_para_subir" title="archivos"></button>
+                    <button id="boton_para_publicar"  title="publicar" >Publicar</button>
+               </form>
+           </div>
+       </div>
+
+       <script type="text/javascript" src="ajax.js"></script>
+       <script type="text/javascript" src="script2.js"></script>
+       <script type="text/javascript" src="ingreso_y_registro.js"></script>
+       <script type="text/javascript" src="reproductor.js"></script>
+       <script type="text/javascript"src="eventos.js"></script>
+
+   </body>
+</html>

@@ -1,0 +1,189 @@
+-
+<!DOCTYPE html>
+<html >
+   <style type="text/css">
+
+.banno
+{
+background-color:#000;
+  width:300px;
+  height:400px;
+  display: none;
+  position: fixed;
+   top:50px;
+   z-index: 2;
+}
+
+.contenidoDeNotificacion
+{
+ top: 25px;
+ position: absolute;
+ height: 376px;
+ width: 298px;
+  display: block;
+  background-color: #818181;
+word-wrap: break-word; 
+ overflow: auto;
+ border-radius: 5px;
+border:1px solid #3C3C3C;
+}
+
+.opnoti
+{
+float:left;
+}
+
+
+
+#botoneraAV1
+{
+height: 20px;
+width: 300px;
+left: 0px;
+top: 0px;
+position: absolute;
+display: block;
+}
+
+#botoneraAV2
+{
+position: absolute;
+left: 0px;
+top: 0px;
+height: 20px;
+width: 300px;
+display: none;
+}
+
+#OtrasConf
+{
+left: 260px;
+position: absolute;
+}
+
+#cajaControlVol
+{
+width: 100px;
+height: 20px;
+left: 0px;
+
+}
+
+#volumenMas
+{
+left: 120px;
+}
+#volumenMenos
+{
+left: 0px;
+}
+
+#barraVol
+{
+left: 20px;
+width: 100px;
+height: 20px;
+}
+
+#cajaBarraConte
+{
+left: 0px;
+top: 20px;
+
+}
+
+
+
+.barraDeOpcionesDeContenido
+{
+height: 20px;
+width: 300px;
+position: absolute;
+background-color: #000000;
+}
+
+.barraMasMenos
+{
+height: 20px;
+width: 140px;
+position: absolute;
+left: 0px;
+top: 40px;
+}
+
+
+.botonMasMenos
+{
+height: 20px;
+width: 20px;
+position: absolute;
+top: 0px;
+}
+
+#verVideo
+{
+position: absolute;
+height: 300px;
+width: 300px;
+top: 100px;
+left: 0px;
+background-color: #fff;
+}
+   </style>
+  <head>
+    <title>reproductor</title>
+
+
+    <script type="text/javascript">
+      
+    </script>
+    
+    </head>
+    <body >        
+           <div id="controlAV" class="banno">
+           <div id="botoneraAV1" class="barraDeOpcionesDeContenido">
+                <button class="boton" title="play"></button>
+                <button class="boton" title="pausa"></button>
+                <button class="boton" title="volumen"></button>
+                <button class="boton" title="siguiente"></button>
+                <button class="boton" title="anterior"></button>
+                <button class="boton" title="pantalla completa"></button>
+           </div>
+           <div id="botoneraAV2" class="barraDeOpcionesDeContenido">
+                <button class="boton" title="subtitulos"></button>
+                <button class="boton" title="audio"></button>
+                <button class="boton" title="video"></button>
+                <button class="boton" title=""></button>
+                <button class="boton" title=""></button>
+                <button class="boton" title="velocidad"></button>
+           </div>
+           <button id="OtrasConf" class="boton" title="otras configuraciones"></button>
+           
+           <div id="cajaControlVol" class="barraMasMenos">
+               <button id="volumenMas" class="botonMasMenos"></button>
+               <div id="barraVol">
+                   <div id="posicionVol">  </div>               
+               </div>
+               <button id="volumenMenos" class="botonMasMenos"></button>
+           </div>
+           <div id="cajaControlVel" class="barraMasMenos">
+               <button id="velocidadMas" class="botonMasMenos"></button>
+               <div id="barraVel">
+                   <div id="posicionVel">  </div>               
+               </div>
+               <button id="velocidadMenos" class="botonMasMenos"></button>
+           </div>
+           <div id="cajaBarraConte" class="barraDeOpcionesDeContenido">
+               <button id="sigParteCont" class="botonMasMenos"></button>
+               <div id="barraCon">
+                   <div id="posicionCon">  </div>               
+               </div>
+               <button id="antParteCont" class="botonMasMenos"></button>
+           </div>
+           <video id="verVideo">
+       
+           </video>
+       
+       </div>
+    </body>
+</html>

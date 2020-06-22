@@ -1,0 +1,623 @@
+/*
+Clases: 
+barra= Lo utilizan la seccion de notificaciones y el reproducto
+ingresar= los imput en el formulario
+sisi= la lista en formulario
+barra=barra superior de secciones
+boton= botones de la caja de notificacion y de la caja de hermientas izquierda
+banno= caja de notificaciones
+opnoti= opciones de notificaciones
+contenidoDeNoficacion= contenido de las notificaciones 
+
+
+ID:
+menu= Barra superior de menu
+reproductor= la seccion del reproductor
+play= boton play del reproductor
+tema=donde aparece el nombre del tema
+confa= configuracion de la musica 
+notificaciones= seccion de las notificaciones 
+buscar= seccion de busqueda
+perfil= seccion de perfil
+contrasena=input donde se pone la contraseña
+usuario= donde pone el nombre de usuario
+secciones= barra superior de secciones
+
+
+contenido= contenido
+barraiz= caja de herramientas en la parte izquierda
+cajaDeBotones= caja de botones de la caja de herramientas
+apliaciones= donde va el contenido de las aplicaciones
+opcion= boton de la caja de hermientas
+tradu= boton de la caja de hermientas
+hacercade= boton de la caja de hermientas
+sec= boton de la caja de hermientas
+marca= boton de la caja de hermientas
+barrade= barra derecha donde va a ir la publicidad
+
+*/
+
+/*                     */
+*{
+	scrollbar-width:none;
+border: 0px none;
+padding: 0px; /* quita el relleno */
+margin: 0px; /* quita el margen */ 
+font-family: arial, verdana, sans-serif; 
+ /*font-style: italic; */ /* sirve para doblar las letras */
+font-variant: normal; /*small-caps; cambia el tipo de mayusculas  */
+ text-decoration: none;
+font-weight: bold;
+font-size: 16px;
+line-height: 20px ;
+text-align: left;
+
+}
+document::-webkit-scrollbar {
+  display: none;
+}
+ul
+{
+list-style:none; /*    quita el circulito a las listas */
+
+
+}
+button
+{
+background-color: transparent;
+border-radius: 0px;
+border:0px;
+color: white;
+margin-left: 5px;
+margin-right: 5px;
+/*background: linear-gradient(#A0A0A0 1%, #818181 );*/
+
+
+}
+input
+{
+border-radius: 0px;
+border:1px solid #3C3C3C;
+}
+
+input[type="checkbox"] {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+        cursor:pointer;
+}
+body
+{
+background-color:#E4E4E4;
+}
+
+.caja_de_noticias
+{
+position: absolute;
+width: 33%;
+height: 400px;
+border:1px solid #3C3C3C;
+border-radius: 5px;
+}
+
+.img_noticias
+{
+background-image: url("sin_imagen");
+}
+
+.orden_de_der_a_izq
+{
+float: right;
+
+}
+.lista_ordenada_en_hori
+{
+display:inline-block;
+}
+
+
+
+.boton
+{
+ width:36px;
+  height:20px;
+  background-color:#818181;
+  float:left;
+  display:block;
+ margin: 2px;
+ cursor: pointer;
+}
+
+.barra
+{
+float: left;
+text-align: center;
+cursor:pointer;
+} 
+
+
+/* ------------------------------------- clase de bandejas de notificaciones----------------------------------------------------- */
+.banno
+{
+background-color:#000;
+  width:300px;
+  height:400px;
+  display: none;
+  position: fixed;
+  left: 50%;
+	margin-left: -150px;
+   top:25px;
+   z-index: 2;
+}
+
+.contenidoDeNotificacion
+{
+ top: 25px;
+ position: absolute;
+ height: 376px;
+ width: 298px;
+  display: block;
+  background-color: #818181;
+word-wrap: break-word; 
+ overflow: auto;
+ border-radius: 0px;
+border:1px solid #3C3C3C;
+}
+
+.opnoti
+{
+float:left;
+}
+
+
+/* ----------------------- barra menu -------------------------------------------------------------- */
+#menu
+{
+  color:#ffffff;
+  width:100%;
+  height:30px;
+  background-color:black;
+  top:0px;
+  left:0px; 
+  position:fixed;
+  z-index: 1000;
+
+}
+
+#barra_menu
+{
+align-content: center;
+width: 1000px;
+height: 30px;
+position: fixed;
+z-index: 1;
+left: 50%;
+margin-left: -500px;
+word-wrap: break-word; 
+           
+}
+           /* -------------------- reproductor de la barra menu------------------------- */
+
+#reproductor
+{
+ /* background-image: url("iconos.jpg"); */
+  width:150px;
+  height:30px;
+  left: 50%;
+  margin-left: -75px;
+  position: absolute;
+} 
+#play
+{
+background-image: url("i1.png");
+background-position: -295px -405px;
+  width:30px;
+  height: 30px;  /* altura */ 
+display: block;
+} 
+#tema
+{ margin: 0;
+ color:#fff;
+ width: 90px;
+ height: 30px;
+ position: relative;
+  overflow: hidden;
+}
+#nombreDelTema
+{
+ white-space:nowrap;
+ position: absolute;
+ text-align: left;
+ left: 0px;
+ top: 0px;
+ /* Starting position */
+ -moz-transform:translateX(90px);
+ -webkit-transform:translateX(90px);	
+ transform:translateX(90px);
+ /* Apply animation to this element */	
+ -moz-animation: example1 15s linear infinite;
+ -webkit-animation: example1 15s linear infinite;
+ animation: nombreDelTema 15s linear infinite;
+}
+
+/* Move it (define the animation) */
+@-moz-keyframes nombreDelTema {
+ 0%   { -moz-transform: translateX(90px); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes nombreDelTema {
+ 0%   { -webkit-transform: translateX(90px); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes nombreDelTema {
+ 0%   { 
+ -moz-transform: translateX(90px); /* Firefox bug fix */
+ -webkit-transform: translateX(90px); /* Firefox bug fix */
+ transform: translateX(90px); 		
+ }
+ 100% { 
+ -moz-transform: translateX(-100%); /* Firefox bug fix */
+ -webkit-transform: translateX(-100%); /* Firefox bug fix */
+ transform: translateX(-100%); 
+ }
+}
+
+
+#confa
+{
+ background-image: url("i1.png");
+background-position: -25px -405px;
+  width:30px;
+  height:30px;
+  display: block;
+  left:120px;
+  position:absolute;
+}
+#controlAV{
+	height: 100px;
+}
+           /*--------------------------------notificaciones-----------------------------------------------------*/
+
+#notificaciones
+{
+
+}
+#permisos
+{
+ background-image: url("lock.png");
+/*background-position: -25px -405px; */
+  width:30px;
+  height:30px;
+  display: block;
+  float:left;
+}
+#mensajes
+{
+ background-image: url("comments.png");
+/* background-position: -25px -405px; */
+  width:30px;
+  height:30px;
+  display: block;
+  float:left;
+}
+#novedades
+{
+background-image: url("i1.png");
+background-position: 225px -192px;
+width:30px;
+height:30px;
+display: block;
+float:left;
+}
+
+           /*------------------------------------ buscar ------------------------------------------------------------*/
+
+
+#buscar
+{
+  float:left;
+ position:relative;
+}
+           /*-------------------------------------- perfil------------------------------------------------------------*/
+
+#perfil
+{
+   position: relative;
+   float:right;  
+   display: none;
+}
+#fotoperfil
+{
+width:30px;
+  height: 30px;  /* altura */ 
+display: block;
+}
+
+           /*-------------------------------------- formulario de ingreso------------------------------------------------------------*/
+
+#ingreso
+{
+   position: relative;
+   float:right; 
+ display: none;
+ 
+}
+
+
+.ingresar
+{
+	width:100px;
+	position: relative;
+	float:right;
+}
+
+
+#formulario
+{
+position: relative;
+float:right;
+display:inline-block;
+}
+
+/* -------------------------VIDEO ------------------------------*/
+#botoneraAV1
+{
+height: 20px;
+width: 300px;
+left: 0px;
+top: 0px;
+position: absolute;
+display: block;
+}
+
+#botoneraAV2
+{
+position: absolute;
+left: 0px;
+top: 0px;
+height: 20px;
+width: 300px;
+display: none;
+}
+
+#OtrasConf
+{
+left: 260px;
+position: absolute;
+}
+
+#cajaControlVol
+{
+width: 100px;
+height: 20px;
+left: 0px;
+
+}
+
+#volumenMas
+{
+left: 120px;
+}
+#volumenMenos
+{
+left: 0px;
+}
+
+#barraVol
+{
+left: 20px;
+width: 100px;
+height: 20px;
+}
+
+#cajaBarraConte
+{
+left: 0px;
+top: 20px;
+
+}
+
+
+
+.barraDeOpcionesDeContenido
+{
+height: 20px;
+width: 300px;
+position: absolute;
+background-color: #000000;
+}
+
+.barraMasMenos
+{
+height: 20px;
+width: 140px;
+position: absolute;
+left: 0px;
+top: 40px;
+}
+
+
+.botonMasMenos
+{
+height: 20px;
+width: 20px;
+position: absolute;
+top: 0px;
+}
+
+#elVideo
+{
+position: absolute;
+height: 300px;
+width: 300px;
+top: 100px;
+left: 0px;
+background-color: #fff;
+}
+/* ---------------------------FIN VIDEO  ---------------------------------------------- */
+
+/* ----------------------------------- caja de registro---------------------------------------*/ 
+
+#contenedor
+{
+
+}
+
+#cajaDeRegistro
+{
+ background-color:#818181;
+  width:300px;
+  height:450px;
+  display: none;
+  position: fixed;
+   top:50px;
+   z-index: 2;
+   left: 100%;
+   margin-left: -300px;
+border-radius: 5px;
+border:1px solid #3C3C3C;
+   
+}
+
+.campo_del_registro
+{
+  width:300px;
+  height:60px;
+}
+
+#campo_fecha
+{
+width:300px;
+height:40px;
+}
+#regi_dia
+{
+width:40px;
+height:20px;
+}
+
+#regi_mes
+{
+width:40px;
+height:20px;
+}
+
+#regi_ano
+{
+width:55px;
+height:20px;
+}
+
+/* ----------------------------------- caja de notificaciones de permisos---------------------------------------*/ 
+
+/* ----------------------------------- caja de notificaciones de mensajes ---------------------------------------*/ 
+
+
+/* ----------------------------------- caja de notificaciones de novedades---------------------------------------*/ 
+
+
+/*---------------------------------------  cuerpo-------------------------------------------------*/
+
+#cuerpo
+{
+/* top: 50px; */
+top: 0px;
+width: 100%;
+height: 100%;
+display:block;
+position: absolute;
+/* left: 200px; */
+left: 0px;
+}
+
+         /*---------------------------------- publicar--------------------------------------------------------*/
+
+#publicar
+{
+ background-color: #818181;
+ width: 500px;
+ top: 60px;
+ left: 50%;
+ margin-left:-250px;
+ display: none;
+height: 130px;
+position: absolute;
+border:  1px solid #38B2E5;
+border-radius: 5px;
+
+}
+#contenido_de_publicacion
+{
+resize: none;
+background-color: #FFF;
+ width: 500px;
+ top: 0px;
+ left: 0px;
+ 
+ display: block;
+height: 100px;
+position: absolute;
+/* border: 1px solid black; */
+box-shadow: 0px 0px 5px 0px #B5DFF1;
+border: 1px solid #38B2E5;
+border-radius: 4px;
+
+}
+
+.boton_para_subir
+{
+top: 100%;
+left: 100%;
+position: absolute;
+width: 30px;
+height: 30px;
+/* border-radius: 10px; */ /* Redondia los bordes      */
+background-image:url('i1.png');
+background-position:-25px -405px;
+ background-color: transparent;
+border: none;
+ 
+} 
+
+
+#boton_para_subir_imagenes
+{
+margin-left: -30px;
+margin-top: -30px;
+}
+
+
+#boton_para_subir_videos
+{
+margin-left: -60px;
+margin-top: -30px;
+}
+
+#boton_para_subir_archivos
+{
+margin-left: -90px;
+margin-top: -30px;
+}
+
+#boton_para_publicar
+{
+top: 100%;
+left: 0%;
+position: absolute;
+margin-top: -24px;
+
+/* El degradado tiene tres parametros  el primero(es opcional) se determina el angulo del degradado
+el segundo el color donde empieza y el tercero el color donde termina el degradado, cada propiedad se separa por coma
+pero hay un parametro extra que se agrega luego de cada color sin ser separado por coma que es asta donde va a llegar
+el degradado puede usarce porsentajes o pixeles, y por ultimo si se pone mas de dos colores este ira recorriendolos 
+de uno al otrp
+100deg, #F0F 50%, #F66 50% , #444 10% */
+}
+
+#boton_para_publicar:hover
+{
+box-shadow: 0px 0px 5px 0px #B5DFF1;
+border:  1px solid #38B2E5;
+}

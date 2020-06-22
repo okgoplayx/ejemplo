@@ -1,0 +1,40 @@
+
+
+alert(Window.matchMedia())
+http://dpi.lv/
+
+screenPPI = document.getElementById('ppitest').offsetWidth;
+<body><divid="ppitest"style="width:1in;visible:hidden;padding:0px"></div></body>
+<imgsrc="image.jpg"style="    height:expression(scale(438,192));    width:expression(scale(270,192))"/>function scale(x, dpi) {    // dpi is for orignal dimensions of the image    return x * screen.deviceXDPI/dpi;}
+Window.matchMedia()
+offsetWidth
+
+// window.history.pushState(5, "Titulo", "/nuevo-recurso");
+
+
+var holalila= "1 \n\n 1 <br/>"
+// divide el texto(String) sengun el separador que le entreguemos borrando este y almacenado sus partes en un vector
+var tititi= holalila.split("\n");
+// cuenta la longitud del vexto
+var erer = tititi.length;
+alert(tititi[2]);
+
+//posisiona el scroll
+window.scroll(10,10) ;
+
+alert(
+      window.scrollY + "hola" + window.scrollX 
+     )
+var bombon = document.styleSheets[0].cssRules[10].selectorText;
+alert(
+      bombon
+     ) 
+
+var gggg = document.getElementById("banno_mensajes").style.display;
+var gdgd = gggg  + "hola";
+ 
+alert(
+ gdgd
+)
+
+document.getElementById("formulario_de_registro").submit();
