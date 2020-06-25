@@ -141,12 +141,12 @@ cursor:pointer;
 /* ------------------------------------- clase de bandejas de notificaciones----------------------------------------------------- */
 .banno
 {
-background-color:#000;
-  width:300px;
-  height:400px;
-  display: none;
-  position: fixed;
-  left: 50%;
+	background-color:#000;
+	width:300px;
+	height:400px;
+	display: none;
+	position: fixed;
+	left: 50%;
 	margin-left: -150px;
    top:25px;
    z-index: 2;

@@ -53,7 +53,7 @@ line-height: 20px ;
 text-align: left;
 
 }
-document::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
 }
 ul

@@ -22,12 +22,55 @@ function crearNodo(tipoElemento, padre, nuevaId, nuevaClass) {
 	/*var cantidadColumnas=Math.floor(window.innerWidth / 200); */
 	cantidadColumnas=3;
 	var largo=window.innerWidth/cantidadColumnas;
-	var alto= largo*1.6;
+	largo=largo.toFixed();
+	var alto= largo;
 	var ultimoIdNoticia="0";
 	var cantidadDeNoticias=0;
+	var relacionEspectroVH; /* 0.7*/
+	var relacionEspectroHV;
+	var imgRelacionEspectroHV=16/9;
+	var imgLargo=largo;
+	var imgAlto;
+	var fuente1;
+	var fuente2;
 	
+	var hojasDeEstilo = document.styleSheets;
+	function seleccionarRegla (Regla) {
+		for (var i=0; i<=hojasDeEstilo[0].cssRules.length; i++) {
+			if (i != hojasDeEstilo[0].cssRules.length) {
+				if (hojasDeEstilo[0].cssRules[i].selectorText===Regla) {
+					return hojasDeEstilo[0].cssRules[i];
+				}
+			}else {
+				hojasDeEstilo[0].insertRule(Regla +" {}", hojasDeEstilo[0].cssRules.length); 
+				return  hojasDeEstilo[0].cssRules[i];
+				}
+		}
+	};
+
+	function actualizarMedidasNoticias(cantidad) {
+		relacionEspectroVH=window.innerHeight/window.innerWidth;
+		relacionEspectroHV=window.innerWidth/window.innerHeight;
+		largo =window.innerWidth/cantidad;
+		largo=largo.toFixed();
+		alto= largo;
+		imgRelacionEspectroVH=16/9;
+		imgAlto=largo/imgRelacionEspectroVH;
+		var imgAlto=imgAlto.toFixed();
+		seleccionarRegla("label").style.fontSize="20px";
+		seleccionarRegla("label").style.height="20px";
+		seleccionarRegla(".caja_de_noticias").style.width=largo+"px";
+		seleccionarRegla(".caja_de_noticias").style.height=largo+"px";
+		seleccionarRegla("#cuerpo").style.left="50%";
+		var centrarCuerpo=window.innerWidth/2;
+		seleccionarRegla("#cuerpo").style.marginLeft="-"+centrarCuerpo.toFixed()+"px";
+	};
+	actualizarMedidasNoticias(3);
 	
-	
+	var hojasDeEstilo = document.styleSheets;
+	var regla = hojasDeEstilo[0].cssRules[1].selectorText;
+	var longitud=hojasDeEstilo[0].cssRules.length;
+	var otro=hojasDeEstilo[0].cssRules.length;
 	
 	if (cantidadColumnas===0) {
 		cantidadColumnas++;
@@ -72,8 +115,8 @@ function crearNodo(tipoElemento, padre, nuevaId, nuevaClass) {
 					ultimaPosicionTop[columnaActual]++;
 				}else {
 					ultimoIdNoticia=idPublicacion;
-					publicacionActual.style.left=columnaActual*33+"%";
-					var posicionVertical=400*ultimaPosicionTop[columnaActual]+30;
+					publicacionActual.style.left=columnaActual*largo+"px";
+					var posicionVertical=largo*ultimaPosicionTop[columnaActual]+30;
 					posicionVertical=posicionVertical+"px";
 					publicacionActual.style.top=posicionVertical;
 					ultimaPosicionTop[columnaActual]++;
@@ -108,7 +151,3 @@ function mostrarOcultar(mostrar, ocultar) {
 		ocultarce(ocultar);
 	};
 }
-
-if (getElementById("noticia_0x1").style.width="400px") {
-	getElementById("barra_menu").style.color="red";
-}else {	getElementById("barra_menu").style.color="blue";};

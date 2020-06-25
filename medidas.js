@@ -15,9 +15,10 @@ function actualizarMedidasNoticas(cantidad) {
 	largo =window.innerWidth/cantidad;
 	largo=largo.toFixed();
 	alto= largo;
-	fontSize
 	fuente1=
 	fuente2=
+	hojasDeEstilo("label").style.fontSize=20px;
+	hojasDeEstilo("label").style.height=20px;
 	hojasDeEstilo(".caja_de_noticias").style.width=largo+"px";
 	
 }
@@ -31,6 +32,7 @@ var hojasDeEstilo = document.styleSheets;
 function seleccionarRegla (Regla) {
 	for (i=0; i>hojasDeEstilo[0].cssRules.length; i++;) {
 		if (hojasDeEstilo[0].cssRules[i].selectorText===Regla) {
+			alert(hojasDeEstilo[0].cssRules[i].selectorText);
 			return hojasDeEstilo[0].cssRules[i];
 		}else {
 			return null;
@@ -53,7 +55,6 @@ function getStyleSheet(tituloUnico) {
 
 var hoja=getStyleSheet("hoja1");
 
-alert(document.styleSheets[0].cssRules[4]);
 
 
 
